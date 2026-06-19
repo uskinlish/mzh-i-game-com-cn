@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://uskinlish.github.io/mzh-i-game-com-cn/sitemap.xml

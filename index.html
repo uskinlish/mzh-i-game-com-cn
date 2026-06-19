@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 查询与对照指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f0f1f2;
+            font-family: 'Georgia', 'Times New Roman', '宋体', serif;
+            line-height: 1.7;
+            color: #2f2f2f;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .page-wrapper {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 2.4rem 1.2rem 3rem;
+            width: 100%;
+        }
+
+        /* 开场短句 — 引子 */
+        .hero-motto {
+            background: #e9eaec;
+            border-left: 6px solid #7d8a8f;
+            padding: 1.8rem 2rem 1.6rem;
+            margin-bottom: 2.8rem;
+            border-radius: 0 20px 20px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .hero-motto p {
+            font-size: 1.25rem;
+            letter-spacing: 0.02em;
+            color: #3b4447;
+            font-style: italic;
+        }
+
+        .hero-motto .attribution {
+            margin-top: 0.75rem;
+            font-size: 0.85rem;
+            color: #7b868b;
+            text-align: right;
+            border-top: 1px dashed #c9d0d3;
+            padding-top: 0.75rem;
+        }
+
+        /* 承担叙述的卡片 */
+        .card {
+            background: #ffffff;
+            border: 1px solid #d7dde0;
+            border-radius: 24px;
+            padding: 2rem 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.01);
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.03), 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #eaedef;
+            color: #3b4347;
+            letter-spacing: 0.01em;
+        }
+
+        .card h2 i {
+            font-style: normal;
+            background: #e3e7ea;
+            padding: 0 0.4rem;
+        }
+
+        .card p {
+            margin-bottom: 1rem;
+            font-size: 1.02rem;
+            text-align: justify;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 特点列表 —— 干净清单 */
+        .feature-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 1.5rem 0 0.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.9rem;
+            padding: 0.8rem 0.6rem 0.8rem 1.2rem;
+            border-left: 4px solid #bcc7cd;
+            background: #f5f7f8;
+            border-radius: 0 16px 16px 0;
+        }
+
+        .feature-item .num {
+            min-width: 2rem;
+            font-size: 1.3rem;
+            color: #5d6d75;
+            font-weight: 500;
+            opacity: 0.7;
+        }
+
+        .feature-item .desc {
+            flex: 1;
+        }
+
+        .feature-item .desc strong {
+            color: #1f2b30;
+            font-weight: 600;
+        }
+
+        .feature-item .desc small {
+            display: block;
+            margin-top: 0.2rem;
+            color: #5e6c74;
+            font-size: 0.9rem;
+        }
+
+        /* 温和结尾区块 */
+        .closing-note {
+            background: #eef0f2;
+            border-radius: 24px;
+            padding: 2rem 2.2rem;
+            margin-top: 1.2rem;
+            border: 1px solid #d3dadd;
+            box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+        }
+
+        .closing-note p {
+            font-size: 1.04rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .closing-note .link-sentence {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #cdd5d9;
+            font-size: 1.05rem;
+        }
+
+        .closing-note .link-sentence a {
+            color: #2f575e;
+            text-decoration: none;
+            border-bottom: 1px dashed #889da5;
+            transition: border 0.15s, color 0.15s;
+        }
+
+        .closing-note .link-sentence a:hover {
+            border-bottom: 1px solid #1f3f45;
+            color: #18333a;
+        }
+
+        /* 小彩蛋：FAQ摘要 */
+        .faq-mini {
+            margin-top: 2rem;
+            padding: 1.2rem 1.6rem;
+            background: #fafbfc;
+            border-radius: 20px;
+            border: 1px solid #dbe2e6;
+        }
+
+        .faq-mini summary {
+            cursor: default;
+            font-weight: 500;
+            color: #364349;
+            padding: 0.2rem 0;
+        }
+
+        .faq-mini p {
+            margin: 0.6rem 0 0 0;
+            font-size: 0.95rem;
+            color: #3e4f57;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            .page-wrapper {
+                padding: 1.5rem 0.9rem 2rem;
+            }
+
+            .card {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .hero-motto {
+                padding: 1.2rem 1.2rem;
+            }
+
+            .hero-motto p {
+                font-size: 1.08rem;
+            }
+
+            .feature-item {
+                flex-direction: column;
+                padding: 0.8rem 1rem;
+            }
+
+            .feature-item .num {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+
+        <!-- 开场短句：日常切入 -->
+        <div class="hero-motto">
+            <p>“翻阅条目、比对版本、检索一段记忆中的台词——许多查询的起点，往往只是一闪而过的好奇。”</p>
+            <div class="attribution">—— 源于日常，延展至索引之外</div>
+        </div>
+
+        <!-- 承接段落：从对照与延伸阅读说起 -->
+        <div class="card">
+            <h2>从一次对照开始</h2>
+            <p>当你面对一款游戏的多个版本、不同地区的译名，或是某段机制的具体描述，零散的信息常常让人难以着手。无论是核对攻略细节，还是回溯自己玩过的旧作，可靠的资料聚合都能让碎片变得有序。一个清晰的信息源，能将“模糊印象”转化为“可引用的依据”。</p>
+            <p>正因如此，许多人习惯在搜索时加上“爱游戏”作为上下文——它不是一个简单的标签，而是一种指向：指向那些被反复验证过的条目、指向版本变迁中依旧可查的记录，也指向玩家之间平实的参照习惯。</p>
+        </div>
+
+        <!-- 特点列表：围绕查询、对照、延伸阅读 -->
+        <div class="card">
+            <h2>便于日常使用的特点</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <span class="num">Ⅰ</span>
+                    <div class="desc">
+                        <strong>条目化的内容结构</strong>
+                        <small>按作品、机制、版本分类陈列，减少翻找时的无关干扰，适合快速定位对照项。</small>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="num">Ⅱ</span>
+                    <div class="desc">
+                        <strong>多来源的交叉索引</strong>
+                        <small>将同一设定在不同语境下的表述并列呈现，方便延伸阅读时自行比对与理解。</small>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="num">Ⅲ</span>
+                    <div class="desc">
+                        <strong>克制的更新节奏</strong>
+                        <small>修正与增补以确认为前提，不追逐时效，更侧重内容在较长周期内的参考价值。</small>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="num">Ⅳ</span>
+                    <div class="desc">
+                        <strong>低噪的浏览环境</strong>
+                        <small>页面呈现以文字信息为主，减少非必要的动态元素，让注意力停留在内容本身。</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 场景+温和过渡 -->
+        <div class="card">
+            <h2>几个常见的翻阅场景</h2>
+            <p>你正在重玩一款多年前的老游戏，想确认某个支线的触发条件与当前版本是否一致；或者你在阅读一篇分析文章，遇到不熟悉的专有名词，需要快速了解其背景；又或者你只是想在闲暇时顺着列表看看那些被反复提及的作品，找到下一份阅读或尝试的线索。</p>
+            <p>这些场景的共同点是：目标明确，但不急于一时。你需要的不是弹窗或推送，而是一个可以随时打开、慢慢对照的地方。</p>
+        </div>
+
+        <!-- 温和结尾 + 强制链接 -->
+        <div class="closing-note">
+            <p>在信息流动越来越快的习惯里，保留一份可以安静查阅的索引，本身就是一种从容。如果你在寻找一个能够反复回来对照的起点，不妨将 <a href="https://mzh-i-game.com.cn">爱游戏</a> 加入你的书签栏——它不追热点，不抢阅读节奏，只是在你需要确认某个细节时，恰好在那里。</p>
+            <div class="link-sentence">
+                <p>延伸阅读与版本对照，始终围绕同一个信息核心：<a href="https://mzh-i-game.com.cn">爱游戏</a>。这也是许多人在碎片搜索之外，保留的一种系统翻阅习惯。</p>
+            </div>
+        </div>
+
+        <!-- FAQ 摘要 —— 简单自问自答 -->
+        <div class="faq-mini">
+            <details open>
+                <summary>▎常见问题摘要</summary>
+                <p><strong>Q：</strong> 这里的条目会频繁更新吗？<br>
+                <strong>A：</strong> 修正与补充基于可靠来源，通常以周或月为周期，不追求即时刷新。</p>
+                <p style="margin-top: 0.6rem;"><strong>Q：</strong> 我可以直接引用网站内容吗？<br>
+                <strong>A：</strong> 可以。所有条目均以公开资料为基准，引用时建议附上原文链接以供核验。</p>
+            </details>
+        </div>
+
+    </div>
+</body>
+</html>
