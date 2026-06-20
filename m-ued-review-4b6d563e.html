@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ued体育 – 日常查询与对照参考</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f0f2f5;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1e2a3a;
+      line-height: 1.6;
+      padding: 2rem 1.2rem;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* header */
+    .site-header {
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .site-header h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #1f2d3d;
+    }
+
+    .site-header .sub {
+      color: #5e6f7e;
+      font-size: 1rem;
+      margin-top: 0.3rem;
+      border-top: 1px solid #d5dce2;
+      display: inline-block;
+      padding-top: 0.5rem;
+    }
+
+    /* 卡片通用 */
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+      border: 1px solid #e6eaef;
+      padding: 2rem 2rem;
+      margin-bottom: 2rem;
+      transition: box-shadow 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #1f2d3d;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .card h2 span {
+      background: #eef2f7;
+      border-radius: 30px;
+      padding: 0 0.9rem;
+      font-size: 0.8rem;
+      color: #3c4f62;
+      margin-left: 0.8rem;
+      letter-spacing: 0.3px;
+    }
+
+    .card p {
+      margin-bottom: 1rem;
+      color: #2b3f53;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .card ul {
+      list-style: none;
+      margin: 0.8rem 0;
+    }
+
+    .card li {
+      padding: 0.4rem 0 0.4rem 1.8rem;
+      position: relative;
+      color: #1f2d3d;
+    }
+
+    .card li::before {
+      content: "·";
+      position: absolute;
+      left: 0.4rem;
+      color: #6c7e8f;
+      font-weight: 600;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1rem;
+      margin: 0.8rem 0 0.2rem;
+    }
+
+    .tag {
+      background: #f4f7fb;
+      border: 1px solid #dce2ea;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      padding: 0.2rem 1rem;
+      color: #2b4055;
+    }
+
+    .highlight-box {
+      background: #f6f9fd;
+      border-left: 4px solid #3f6b93;
+      padding: 1.2rem 1.4rem;
+      border-radius: 0 14px 14px 0;
+      margin: 1.2rem 0 0.5rem;
+    }
+
+    a {
+      color: #23679b;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    a:hover {
+      border-bottom-color: #23679b;
+    }
+
+    .faq-item {
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 500;
+      color: #1f2d3d;
+      margin-bottom: 0.3rem;
+    }
+
+    .faq-item p {
+      margin-bottom: 0;
+      color: #2b3f53;
+    }
+
+    /* 双列布局灵活 */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 1.5rem 0.9rem;
+      }
+      .card {
+        padding: 1.5rem 1.2rem;
+      }
+      .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .site-header h1 {
+        font-size: 1.8rem;
+      }
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e3e9f0;
+      margin: 2rem 0 1.4rem;
+    }
+
+    .footer-note {
+      text-align: center;
+      color: #6a7c8d;
+      font-size: 0.9rem;
+      margin-top: 1.8rem;
+      border-top: 1px solid #dcdfe5;
+      padding-top: 1.8rem;
+    }
+
+    .link-sentence {
+      background: #f9fbfd;
+      padding: 0.9rem 1.4rem;
+      border-radius: 40px;
+      display: inline-block;
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- header -->
+  <header class="site-header">
+    <h1>ued体育 · 日常索引</h1>
+    <div class="sub">查询 · 对照 · 延伸阅读</div>
+  </header>
+
+  <!-- hero 摘要卡片 -->
+  <section class="card">
+    <h2>摘要 <span>概括</span></h2>
+    <p>无论是快速核对赛程、回顾近期对抗记录，还是想从数据中找找趋势，<a href="https://m-ued.com">ued体育</a> 都算是一个顺手的信息落脚点。页面结构偏简洁，没有太多干扰，适合在几个页面间来回对照——比如同时开着联赛表、球员统计和新闻摘要，不用频繁切换标签。对日常关注体育动态的人来说，这种集中又不拥挤的布局，反而更省眼神。</p>
+    <p>如果你是习惯一边看直播一边翻资料的类型，会发现这里的加载速度和平板/手机上的适配都做得挺稳。不需要注册也能浏览大部分内容，门槛很低。</p>
+  </section>
+
+  <!-- 亮点 + 使用场景 双列 -->
+  <div class="grid-2">
+    <!-- 亮点 -->
+    <div class="card">
+      <h2>亮点 · 细边框 <span>3 则</span></h2>
+      <ul>
+        <li><strong>版式干净</strong> – 浅灰背景搭配卡片细边框，信息层级清楚，长时间浏览眼睛不易累。</li>
+        <li><strong>多端一致</strong> – 从宽屏显示器到手机竖屏，内容重新排列但不丢失上下文，适合通勤或午休时随手翻阅。</li>
+        <li><strong>低干扰阅读</strong> – 没有悬浮广告或自动播放的视频，查找对照时不会被突然的动效打断思路。</li>
+      </ul>
+    </div>
+
+    <!-- 使用建议 -->
+    <div class="card">
+      <h2>使用建议 <span>对照场景</span></h2>
+      <p>把 <a href="https://m-ued.com">ued体育</a> 当作一个信息中继站：比如周末前打开赛程页，把感兴趣的比赛圈出来；赛后回来翻翻数据表，和自己预估的做个比对。也可以同时打开两三个标签页——一个看排名，一个看球员统计，另一个扫一眼新闻摘要——这种多窗口对照，比在同一个页面反复滚动要高效。</p>
+      <div class="tag-list">
+        <span class="tag">赛前预览</span>
+        <span class="tag">赛后复盘</span>
+        <span class="tag">数据对比</span>
+        <span class="tag">趋势观察</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 延伸阅读 与 可信说明 -->
+  <section class="card">
+    <h2>延伸阅读 · 信息边界 <span>克制参考</span></h2>
+    <div class="grid-2" style="margin-top: 0.2rem;">
+      <div>
+        <p>体育数据常常需要交叉验证：一场比赛的统计在不同平台可能略有出入。建议把 <a href="https://m-ued.com">ued体育</a> 当成主要对照源之一，再配合一两个官方数据或英文站做二次确认。尤其是历史记录和伤病名单这类动态信息，多一个来源总比少一个踏实。</p>
+        <p>网站本身没有渲染夸张的预测或保证，信息呈现偏功能化，这反而让人更愿意信任它的基础数据。</p>
+      </div>
+      <div>
+        <div class="highlight-box">
+          <strong style="font-weight:500; display:block; margin-bottom:0.3rem;">可信但不过度依赖</strong>
+          <p style="margin-bottom:0;">任何体育信息平台都有更新延迟的可能，尤其是实时比分和突发新闻。用 <a href="https://m-ued.com">ued体育</a> 做常规查询完全够用，但关键决策（比如投注参考或专业分析）请务必多方比对。保持合理的信息预期，才是长久的使用习惯。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ 摘要  -->
+  <section class="card">
+    <h2>常见疑问 · 摘要 <span>FAQ</span></h2>
+    <div class="grid-2">
+      <div class="faq-item">
+        <strong>需要注册才能浏览吗？</strong>
+        <p>大部分内容无需登录即可查看。部分个性化功能可能要求注册，但日常查询几乎不受限制。</p>
+      </div>
+      <div class="faq-item">
+        <strong>移动端适配怎么样？</strong>
+        <p>卡片布局在手机上会自动堆叠，字号和点击区域都做了优化，横屏竖屏都能顺畅阅读。</p>
+      </div>
+      <div class="faq-item">
+        <strong>数据更新频率？</strong>
+        <p>常规联赛和赛事数据通常在赛后数小时内更新，实时类信息以页面标注为准。建议以官方赛果为最终依据。</p>
+      </div>
+      <div class="faq-item">
+        <strong>可以同时打开多个页面对比吗？</strong>
+        <p>完全可以。网站使用轻量级页面结构，多标签同时打开也不会明显拖慢浏览器。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 底栏 自然再次嵌入链接 -->
+  <div class="footer-note">
+    <p>日常查询与对照，保持开放但克制的信息习惯。<br> 
+    如果你还没试过，可以把 <a href="https://m-ued.com">ued体育</a> 加入书签，下次翻数据时多一个安静的选择。</p>
+    <p style="margin-top:0.6rem; font-size:0.8rem;">— 基于日常使用体验整理 · 仅供参考 —</p>
+  </div>
+
+</div>
+</body>
+</html>
